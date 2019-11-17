@@ -15,7 +15,7 @@ import java.net.URI;
  * @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Combiner操作.png
  *
  * 1. Combiner肯定是用了反射的技术
- * 2. Combiner操作之前应该也执行了shuffle操作，拿到转换成key以及对应的value迭代器，
+ * 2. Combiner操作之前应该也执行了类似shuffle的操作，拿到转换成key以及对应的value迭代器，
  *    处理后交给上下文，然后再shuffle，转换成key以及对应的value迭代器丢给下一个Reducer处理
  *
  * @author Liucheng
