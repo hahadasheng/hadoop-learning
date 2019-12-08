@@ -96,5 +96,9 @@ reducer个数：3
     15* ==> ..
     other ==> ..
 
+<<<<<<< HEAD
 Partitioner决定map task(或者Combiner)的输出的数据交由哪个reducetask处理
+=======
+Partitioner决定maptask输出的数据交由哪个reducetask处理
+>>>>>>> a9d37a311ae07a749a2085cf4e67935b56c4854a
 默认实现：分发的key的hash值与reduce task个数取模

@@ -31,6 +31,7 @@ public class HDFSWCAppOld {
 
         // 1. 获取文件系统句柄
         Configuration configuration = new Configuration();
+<<<<<<< HEAD
         FileSystem fileSystem = FileSystem.get(new URI("hdfs://hadoop000"), configuration, "hadoop");
 
         // 2. 获取需要统计的文件
@@ -46,12 +47,33 @@ public class HDFSWCAppOld {
             LocatedFileStatus file = iterator.next();
             FSDataInputStream in = fileSystem.open(file.getPath());
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+=======
+        final FileSystem fileSystem = FileSystem.get(new URI("hdfs://hadoop000"), configuration, "hadoop");
+
+        // 2. todo 获取需要统计的文件
+        final Path root = new Path("/");
+        final Path remotePath = new Path(root, new Path("apache-hadoop.txt"));
+
+        // 3. 获取文件迭代器
+        final RemoteIterator<LocatedFileStatus> iterator = fileSystem.listFiles(remotePath, false);
+
+        // 4. 遍历文件迭代器获取流,并存入缓存
+        final Map<String, Integer> catche = new ConcurrentHashMap<>();
+        while (iterator.hasNext()) {
+            final LocatedFileStatus file = iterator.next();
+            final FSDataInputStream in = fileSystem.open(file.getPath());
+            final BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+>>>>>>> a9d37a311ae07a749a2085cf4e67935b56c4854a
 
             String line;
             while ((line = reader.readLine()) != null) {
 
                 // todo 统计计算
+<<<<<<< HEAD
                 String[] wordArr = line.split("[^a-zA-Z0-9]+");
+=======
+                final String[] wordArr = line.split("[^a-zA-Z0-9]+");
+>>>>>>> a9d37a311ae07a749a2085cf4e67935b56c4854a
 
                 for (String word : wordArr) {
                     catche.merge(word, 1, (a, b) -> a + b);
@@ -64,12 +86,21 @@ public class HDFSWCAppOld {
         }
 
 
+<<<<<<< HEAD
         // 5. 获取输入流
         Path outPath = new Path("/count.txt");
         FSDataOutputStream out = fileSystem.create(outPath);
 
         // 6. 遍历缓存，将统计写入输出流
         Set<Map.Entry<String, Integer>> entries = catche.entrySet();
+=======
+        // 5. todo 获取输入流
+        final Path outPath = new Path("/count.txt");
+        final FSDataOutputStream out = fileSystem.create(outPath);
+
+        // 6. 遍历缓存，将统计写入输出流
+        final Set<Map.Entry<String, Integer>> entries = catche.entrySet();
+>>>>>>> a9d37a311ae07a749a2085cf4e67935b56c4854a
         entries.forEach(entry -> {
             try {
                 System.out.println(entry.getKey() + " \t " + entry.getValue());

@@ -1,6 +1,9 @@
 package com.hahadasheng.bigdata.hadooplearning.mapreducerlearning.wordcount;
 
+<<<<<<< HEAD
 import com.hahadasheng.bigdata.hadooplearning.utils.FileUtilsLocal;
+=======
+>>>>>>> a9d37a311ae07a749a2085cf4e67935b56c4854a
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
@@ -43,8 +46,15 @@ public class WordCountLocalApp {
 
         String pathIn = "E:\\ImprovementWorkingSpace\\hadoop-learning\\src\\main\\resources\\localtest\\wc.txt";
         String pathOut = "E:\\ImprovementWorkingSpace\\hadoop-learning\\src\\main\\resources\\localtest\\count";
+<<<<<<< HEAD
         // 本地递归删除文件夹(代码略)
         FileUtilsLocal.removeFileRecursion(pathOut);
+=======
+        /*
+        递归删除pathOut下的文件文件夹，然后再将pathOut空文件夹删除
+        代码略
+        */
+>>>>>>> a9d37a311ae07a749a2085cf4e67935b56c4854a
 
         // 设置Job对应的参数：作业输入和输出的路径
         FileInputFormat.setInputPaths(job, new Path(pathIn));

@@ -6,7 +6,11 @@
 
     <groupId>com.hahadasheng.bigdata</groupId>
     <artifactId>hadoop-learning</artifactId>
+<<<<<<< HEAD
     <version>2.0-RELEASE</version>
+=======
+    <version>1.0-RELEASE</version>
+>>>>>>> a9d37a311ae07a749a2085cf4e67935b56c4854a
     <packaging>jar</packaging>
     <name>hadoop-learning</name>
 
@@ -56,9 +60,12 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+<<<<<<< HEAD
                     <compilerArguments>
                         <bootclasspath>${JAVA_HOME}/jre/lib/rt.jar</bootclasspath>
                     </compilerArguments>
+=======
+>>>>>>> a9d37a311ae07a749a2085cf4e67935b56c4854a
                 </configuration>
             </plugin>
         </plugins>

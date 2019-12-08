@@ -18,7 +18,11 @@ public class AccessAppLocal {
 
     public static void main(String[] args) throws Exception {
 
+<<<<<<< HEAD
         // 配置类；默认为本地文件系统
+=======
+        // 配置类
+>>>>>>> a9d37a311ae07a749a2085cf4e67935b56c4854a
         Configuration configuration = new Configuration();
 
         // Job工作类
