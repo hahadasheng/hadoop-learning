@@ -16,7 +16,7 @@
 
     <properties>
         <!--定义Hadoop版本-->
-        <hadoop.version>2.6.0-cdh5.15.1</hadoop.version>
+        <hadoop.version>2.7.0</hadoop.version>
     </properties>
 
     <!---引入cdh的仓库: 注意：Maven软件中的Setting如果配置比如阿里镜像可能导致下载不了jar包-->
